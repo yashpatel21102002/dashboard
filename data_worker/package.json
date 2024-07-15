@@ -1,0 +1,21 @@
+{
+  "name": "data_worker",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@prisma/client": "^5.16.2",
+    "express": "^4.19.2",
+    "random-date-generator": "^1.0.2"
+  },
+  "devDependencies": {
+    "prisma": "^5.16.2"
+  }
+}
