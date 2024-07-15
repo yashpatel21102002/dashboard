@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import {
   Card,
@@ -15,7 +17,7 @@ type Props = {
   popularity: number;
 };
 
-const UnPopularScreen = async ({ count }: { count: Props[] }) => {
+const UnPopularScreen = ({ count }: { count: Props[] }) => {
   return (
     <Card className="ring-red-900 ring-1">
       <CardHeader>

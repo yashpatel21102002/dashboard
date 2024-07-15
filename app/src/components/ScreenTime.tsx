@@ -1,10 +1,19 @@
-import React from "react";
-import { Card, CardDescription, CardHeader, CardTitle } from "./ui/card";
-import { TrendingUp } from "lucide-react";
-import { getScreenTime } from "@/utils/analytics";
+"use client";
 
-const ScreenTime = async () => {
-  const data = await getScreenTime();
+import React, { useEffect, useState } from "react";
+import { Card, CardDescription, CardHeader } from "./ui/card";
+
+const ScreenTime = () => {
+  const [data, setData] = useState<
+    { screenName: string; totalScreenTime: number }[]
+  >([]);
+  useEffect(() => {
+    const getScreenTime = async () => {
+      const data: any = await getScreenTime();
+      setData(data);
+    };
+    getScreenTime();
+  }, []);
   return (
     <Card className="ring-1">
       <CardHeader>

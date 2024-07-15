@@ -1,12 +1,22 @@
+"use client";
 import ImportantUser from "@/components/ImportantUser";
 import PopularScreen from "@/components/PopularScreen";
 import ScreenTime from "@/components/ScreenTime";
 import UnPopularScreen from "@/components/UnPopularScreen";
 import YearlyCommonUsage from "@/components/YearlyCommonUsage";
 import { getMostPopularScreens } from "@/utils/analytics";
+import { useEffect, useState } from "react";
 
-const Page = async () => {
-  const count = await getMostPopularScreens();
+const Page = () => {
+  const [count, setCount] = useState<any>([]);
+
+  useEffect(() => {
+    const getData = async () => {
+      setCount(await getMostPopularScreens());
+    };
+
+    getData();
+  }, []);
 
   return (
     <div className="flex flex-col gap-4 mt-4 mx-2">

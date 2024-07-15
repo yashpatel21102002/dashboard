@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+
+import React, { useEffect, useState } from "react";
 import { Card, CardDescription, CardHeader, CardTitle } from "./ui/card";
 import { getMostImportantUser } from "@/utils/analytics";
 import { Separator } from "./ui/separator";
@@ -8,8 +10,20 @@ type Props = {
   popularity: number;
 };
 
-const ImportantUser = async () => {
-  const data = await getMostImportantUser();
+const ImportantUser = () => {
+  const [data, setData] = useState<{
+    username: string;
+    favoriteScreen: string;
+    leastfavoriteScreen: string;
+  }>();
+
+  useEffect(() => {
+    const getData = async () => {
+      const data: any = await getMostImportantUser();
+      setData(data);
+    };
+  });
+
   return (
     <Card className="ring-1">
       <CardHeader>
