@@ -33,7 +33,7 @@ const ScreenNames = [
 const UserNames = [
     'Yash Patel',
     'Cristiano Ronaldo',
-    'Lionel Messi',
+    //'Lionel Messi',
     'Robert Dowy Junior',
     'Roronoa Zoro',
     'Monkey Luffy',
