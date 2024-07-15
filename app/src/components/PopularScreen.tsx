@@ -22,13 +22,13 @@ const PopularScreen = ({ count }: { count: Props[] }) => {
     <Card className="ring-1 ring-green-900">
       <CardHeader>
         <CardTitle className="flex gap-1 items-center justify-between">
-          {count[0].screenName} <TrendingUp className="h-4 w-4" />
+          {count[0]?.screenName} <TrendingUp className="h-4 w-4" />
         </CardTitle>
         <Separator />
 
         <CardDescription>
-          {count[0].screenName} is visited for{" "}
-          <span className="text-primary font-bold">{count[0].popularity}</span>{" "}
+          {count[0]?.screenName} is visited for{" "}
+          <span className="text-primary font-bold">{count[0]?.popularity}</span>{" "}
           times from beginning of the IMS.
         </CardDescription>
       </CardHeader>

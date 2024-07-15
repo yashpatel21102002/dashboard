@@ -22,7 +22,8 @@ const ImportantUser = () => {
       const data: any = await getMostImportantUser();
       setData(data);
     };
-  });
+    getData();
+  }, []);
 
   return (
     <Card className="ring-1">

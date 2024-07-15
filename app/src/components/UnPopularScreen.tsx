@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 import {
   Card,
@@ -22,14 +20,14 @@ const UnPopularScreen = ({ count }: { count: Props[] }) => {
     <Card className="ring-red-900 ring-1">
       <CardHeader>
         <CardTitle className="flex gap-1 items-center justify-between">
-          {count[count.length - 1].screenName}{" "}
+          {count[count.length - 1]?.screenName}{" "}
           <TrendingDown className="h-4 w-4" />
         </CardTitle>
         <Separator />{" "}
         <CardDescription>
-          {count[count.length - 1].screenName} is visited for{" "}
+          {count[count.length - 1]?.screenName} is visited for{" "}
           <span className="text-primary font-bold">
-            {count[count.length - 1].popularity}
+            {count[count.length - 1]?.popularity}
           </span>{" "}
           times from beginning of the IMS.
         </CardDescription>
